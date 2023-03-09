@@ -26,24 +26,24 @@ module.exports = {
 				test: regExpForRules,
 				exclude: /node_modules/,
 				use: {
-				  loader: 'babel-loader',
-				  options: {
-					presets: [
-						[
-							'@babel/preset-env', 
-							{ 
-								targets: 
+					loader: 'babel-loader',
+					options: {
+						presets: [
+							[
+								'@babel/preset-env', 
 								{ 
-									node: 'current' 
-								} 
-							}
+									targets: 
+									{ 
+										node: 'current' 
+									} 
+								}
+							],
+							'@babel/preset-typescript'
 						],
-						'@babel/preset-typescript'
-					],
-					plugins: [
-						"@babel/plugin-proposal-class-properties"
-					]
-				  }
+						plugins: [
+							'@babel/plugin-proposal-class-properties'
+						]
+				  	}
 				}
 			},
 			{
