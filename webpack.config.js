@@ -4,12 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const createPath = (dirName) => path.resolve(__dirname, dirName);
 
 module.exports = {
-	context: path.resolve(__dirname,'src'),
+	context: createPath('src'),
 	mode: 'development',
 	entry: './index.ts',
 	output: {
 		filename: 'index.js',
-		path: path.resolve(__dirname, 'dist'),
+		path: createPath('dist'),
 	},
 	resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
@@ -21,15 +21,26 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.m?js$/,
+				test: /\.ts?$/,
 				exclude: /node_modules/,
 				use: {
 				  loader: 'babel-loader',
 				  options: {
 					presets: [
-						"@babel/preset-env",
-						"@babel/preset-typescript"
+						[
+							'@babel/preset-env', 
+							{ 
+								targets: 
+								{ 
+									node: 'current' 
+								} 
+							}
+						],
+						'@babel/preset-typescript'
 					],
+					plugins: [
+						"@babel/plugin-proposal-class-properties"
+					]
 				  }
 				}
 			},
@@ -37,7 +48,7 @@ module.exports = {
 				test: /\.ts?$/,
 				use: 'ts-loader',
 				exclude: /node_modules/,
-			},
+			}
 		],
 	  },
     plugins: [
