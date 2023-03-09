@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/dmitryplus/react_course_second_lesson.git"
   },
+  "private": true,
   "keywords": [],
   "author": "",
   "license": "ISC",
