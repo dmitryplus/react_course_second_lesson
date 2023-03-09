@@ -3,6 +3,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const createPath = (dirName) => path.resolve(__dirname, dirName);
 
+const regExpForRules = /\.ts?$/;
+
 module.exports = {
 	context: createPath('src'),
 	mode: 'development',
@@ -21,7 +23,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.ts?$/,
+				test: regExpForRules,
 				exclude: /node_modules/,
 				use: {
 				  loader: 'babel-loader',
@@ -45,7 +47,7 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.ts?$/,
+				test: regExpForRules,
 				use: 'ts-loader',
 				exclude: /node_modules/,
 			}
