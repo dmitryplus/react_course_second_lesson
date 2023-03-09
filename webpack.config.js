@@ -20,11 +20,24 @@ module.exports = {
 	devtool: "source-map",
 	module: {
 		rules: [
-		  {
-			test: /\.ts?$/,
-			use: 'ts-loader',
-			exclude: /node_modules/,
-		  },
+			{
+				test: /\.m?js$/,
+				exclude: /node_modules/,
+				use: {
+				  loader: 'babel-loader',
+				  options: {
+					presets: [
+						"@babel/preset-env",
+						"@babel/preset-typescript"
+					],
+				  }
+				}
+			},
+			{
+				test: /\.ts?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
 		],
 	  },
     plugins: [
