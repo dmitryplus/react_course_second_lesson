@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/dmitryplus/react_course_second_lesson/issues"
   },
-  "homepage": "https://github.com/dmitryplus/react_course_second_lesson#readme"
+  "homepage": "https://github.com/dmitryplus/react_course_second_lesson#readme",
+  "devDependencies": {
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1"
+  }
 }
