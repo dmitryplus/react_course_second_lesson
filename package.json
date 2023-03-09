@@ -2,10 +2,12 @@
   "name": "second_lesson",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack"
+    "build": "webpack",
+    "ts": "ts-node src/index.ts",
+    "js": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,9 @@
   "homepage": "https://github.com/dmitryplus/react_course_second_lesson#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
     "webpack": "^5.76.0",
     "webpack-cli": "^5.0.1"
   }
